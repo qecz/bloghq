@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :articles
+  resource :contacts, only: [ :create, :new], path_names:{:new => ''}
 
-  get '/' => 'home#index'
+ # get 'contacts' => 'contacts#new'
+#get '/' => 'home#index'
 
-  resource :contacts, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
