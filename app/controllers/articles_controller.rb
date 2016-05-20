@@ -4,7 +4,7 @@ def new
 end
 
 def create
-  render plain:  params[:articles].inspect
+  #render plain:  params[:articles].inspect
 end
 
 
