@@ -25,17 +25,24 @@ def new
 end
 
 def create
-  #render plain:  params[:articles].inspect
+
+#render plain:  params[:articles].inspect
+
 @article = Article.new(article_params)
 
-if @article.valid?
- @article.save
- redirect_to @article
-else
-  render action: 'new'
+  if @article.save
+      redirect_to @article
+    else
+      render action: 'new'
+    end
 end
 
+def destroy
+  @article = Article.find(params[:id])
+  @article.destroy
+  redirect_to articles_path
 end
+
 
 private
 def article_params
