@@ -1,2 +1,40 @@
 <h2><%= @article.title %></h2>
 <p><%= @article.text %></p>
+
+<!-- Comment list -->
+
+<h2>List of comment</h2>
+
+<% @article.comments.each do |comm| %>
+
+<h3><%=comm.author %> </h3>
+
+<p>
+<%=comm.body %>
+</p>
+
+<hr>
+
+<% end %>
+
+<!-- Comment form -->
+
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+
+<p>
+
+	<%= f.label :author %>
+	<%= f.text_field :author %>
+
+</p>
+
+<p>
+
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+
+</p>
+
+
+<%= f.submit %>
+<% end %>
