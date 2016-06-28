@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+before_filter :authenticate_user!
+
 def update 
   @article = Article.find(params[:id])
   if @article.update(article_params) 
