@@ -1,3 +1,8 @@
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+  gem 'capybara'
+end
+
 source 'https://rubygems.org'
 gem 'devise'
 
