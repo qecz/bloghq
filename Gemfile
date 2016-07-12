@@ -1,10 +1,11 @@
-group :test, :development do
-  gem "rspec-rails", "~> 2.4"
-  gem 'capybara'
-end
 
 source 'https://rubygems.org'
 gem 'devise'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
