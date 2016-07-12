@@ -1,0 +1,63 @@
+
+Randomized with seed 65276
+FF.FFFF
+
+Failures:
+
+  1) Comment 
+     Failure/Error: it { should belong_to :article }
+
+     NoMethodError:
+       undefined method `belong_to' for #<RSpec::ExampleGroups::Comment:0x5a88d58>
+     # ./spec/model/comment_spec.rb:4:in `block (2 levels) in <top (required)>'
+
+  2) Article#last_comment returns last comment
+     Failure/Error: expect(article.last_comment.body).to eq "comment body 3"
+
+       expected: "comment body 3"
+            got: "Body bla bla 3"
+
+       (compared using ==)
+     # ./spec/model/article_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+  3) Article validations 
+     Failure/Error: it { should validate_presence_of :title }
+
+     NoMethodError:
+       undefined method `validate_presence_of' for #<RSpec::ExampleGroups::Article::Validations:0x53ee900>
+     # ./spec/model/article_spec.rb:6:in `block (3 levels) in <top (required)>'
+
+  4) Article validations 
+     Failure/Error: it { should validate_presence_of :text }
+
+     NoMethodError:
+       undefined method `validate_presence_of' for #<RSpec::ExampleGroups::Article::Validations:0x53e3f38>
+     # ./spec/model/article_spec.rb:7:in `block (3 levels) in <top (required)>'
+
+  5) Article associations should have many :comments
+     Failure/Error: it { should have_many :comments }
+       expected #<Article:0x4807d10> to respond to `has_many?`
+     # ./spec/model/article_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  6) Contact 
+     Failure/Error: it { should validate_presence_of :email }
+
+     NoMethodError:
+       undefined method `validate_presence_of' for #<RSpec::ExampleGroups::Contact:0x47e44c0>
+     # ./spec/model/contact_spec.rb:4:in `block (2 levels) in <top (required)>'
+
+Finished in 0.28403 seconds (files took 21.27 seconds to load)
+7 examples, 6 failures
+
+Failed examples:
+
+rspec ./spec/model/comment_spec.rb:4 # Comment 
+rspec ./spec/model/article_spec.rb:24 # Article#last_comment returns last comment
+rspec ./spec/model/article_spec.rb:6 # Article validations 
+rspec ./spec/model/article_spec.rb:7 # Article validations 
+rspec ./spec/model/article_spec.rb:11 # Article associations should have many :comments
+rspec ./spec/model/contact_spec.rb:4 # Contact 
+
+Randomized with seed 65276
+
+C:/RailsInstaller/Ruby2.2.0/bin/ruby.exe -I'C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.5.1/lib';'C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rspec-support-3.5.0/lib' 'C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/rspec-core-3.5.1/exe/rspec' --pattern 'spec/**{,/*/**}/*_spec.rb'
