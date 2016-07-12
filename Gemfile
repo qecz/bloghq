@@ -2,10 +2,7 @@
 source 'https://rubygems.org'
 gem 'devise'
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
-end
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +39,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+gem 'factory_girl_rails'
+
 end
 
 group :development do
